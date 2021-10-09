@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+body,
+html {
+  margin: 0px;
+  height: 100%;
+  background: transparent;
+}
+header {
+  height: 0px;
+  background: snow;
+}
+
+#frame {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 15%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 1450px;
+    height: 977px;
+    background-image: url("https://i.gyazo.com/472cc441697843997e4abe815f078e76.png");
+}
+main {
+  display: flex;
+  width: 1320px;
+  height: 830px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(0deg, rgba(94,94,94,1) 0%, rgba(48,48,48,1) 100%);
+}
+button {
+  position: absolute;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: 7px solid #FFFFFF65;
+  border-radius: 20%;
+  height: 100px;
+  width: 100px;
+  font-size: 50px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  color: #FFF;
+  cursor: pointer;
+  display:inline-block;
+}
+
+button-overlay {
+  position: absolute;
+  background-color: #FFF;
+  background-repeat:no-repeat;
+  border-radius: 20%;
+  height: 0px;
+  width: 100px;
+  display:inline-block;
+}
+
+#text {
+    color: #fff;
+    font-size: 150px;
+    line-height: 20px;
+}
+
+#text2 {
+    color: #fff;
+    font-size: 40px;
+    line-height: 20px;
+}
+
+.button-animation {
+  /*transform: rotateX( 180deg ) ;
+  transition: transform 0.5s;*/
+  animation-name: mymove;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes mymove {
+  from {
+    background-color: Transparent; 
+    height: 0%;
+  }
+  to {
+    background-color: #FFF; 
+    height: 100px;
+    transform: translateY(-50px);
+  }
+}
+
+.tablet-animation {
+  animation-name: close-tablet;
+  animation-duration: 1.3s;
+  animation-timing-function: ease;
+}
+
+.tablet-animation-open {
+  animation-name: open-tablet;
+  animation-duration: 1.3s;
+  animation-timing-function: ease;
+}
+
+@keyframes open-tablet {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes close-tablet {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+
+#start {
+  padding: 30px 40px;
+  font-size: 20px;
+  font-family: 'Ubuntu', sans-serif;
+  border-radius: 10%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  width: auto;
+  background: #69ea00ab;
+  border: 0;
+}
+
+.win {
+  display: none;
+  width: 1320px;
+  height: 330px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: #FFF;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(0deg, rgba(46,102,0,1) 0%, rgba(105,234,0,1) 100%);
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.lose {
+  display: none;
+  width: 1320px;
+  height: 330px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  color: #FFF;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+/* Timer */
+
+.progress-bar {
+    position: absolute;
+    bottom:1%;
+    left: 50%;
+    width: 80%;
+    margin: 10px auto;
+    height: 11px;
+    background: rgba(0, 0, 0, 0.842);
+    box-shadow: 0px 0px 15px -5px #00000077;
+    transform: translateX(-50%);
+}
+
+.inner-bar {
+    height: 100%;
+    text-align: right;
+    line-height: 22px;
+    width: 100%;
+    background-color: #69ea00ab;
+    /* background: #dde000d5; */
+     /* background-color: #c90202d2; */
+    transition: 1.5s ease-in-out background-color;
+    box-sizing: border-box;
+}
