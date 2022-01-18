@@ -3,17 +3,7 @@ local MinigameFinished = false
 local MinigameFailed = false
 local MinigameCB = {}
 
-QBCore = nil
-
-Citizen.CreateThread(function()
-    while true do
-        Citizen.Wait(10)
-        if QBCore == nil then
-            TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
-            Citizen.Wait(200)
-        end
-    end
-end)
+local QBCore = exports['qb-core']:GetCoreObject()
 
 RegisterCommand('chimpminigame', function(source, args)
     local time = tonumber(args[1])
